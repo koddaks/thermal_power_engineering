@@ -23,6 +23,17 @@
   gap: 16px;  
 }
 
+.main-social-list__link {
+  display: block;
+  transition: color 0.2s ease, opacity 0.2s ease;
+  &:hover {
+    color: #9900ff;
+  }
+  &:active {
+    opacity: 0.6;
+  }
+}
+
 .main-social-list__icon {
   order: -1;
 }
