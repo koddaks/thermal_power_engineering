@@ -1,58 +1,66 @@
-# Личный проект «{{projectTitle}}» 
+# Start Template: Gulp + WebPack + Babel
 
-* Студент: [{{userName}}]({{userProfile}}).
-* Наставник: `Неизвестно`.
+Сборку делал по примеру автора [youtube](https://www.youtube.com/watch?v=jU88mLuLWlk) канала: [Фрилансер по жизни](https://www.youtube.com/c/FreelancerLifeStyle)
 
----
+## Для работы используйте такие команды
 
-**Обратите внимание, что папка с вашими исходными файлами — `source/`.**
+- Для установки всех зависимостей: `$ npm install`;
+- Для запуска сборщика Gulp нужно использовать: `$ npm run dev`;
+- Для сборки проекта в режиме `"production"`: `$ npm run build`;
 
-Полезный файл:
+## Что делает Gulp?
 
-- [Contributing.md](Contributing.md) — руководство по внесению изменений.
+- сжимает HTML в режиме `production`;
+- удаляет комментарии из HTML в режиме `production`;
+- собирает SCSS файлы, добавляет вендорные префиксы;
+- удаляет комментарии из SCSS файлов;
+- в режиме `production` сжимает CSS и делает копию без сжатия;
+- конвертирует шрифты в `.ttf`, и из `.ttf` в `woff/woff2`;
+- создает файл для подключения шрифтов. Данный файл создается по такому пути: `src/scss/config/fonts.scss`, выглядит это так:
 
-_Не удаляйте и не обращайте внимание на файлы:_<br>
-_`.editorconfig`, `.gitattributes`, `.gitignore`, `.stylelintrc`, `.travis.yml`, `package-lock.json`, `package.json`._
-
----
-
-### Памятка
-
-#### 1. Зарегистрируйтесь на Гитхабе
-
-Если у вас ещё нет аккаунта на [github.com](https://github.com/join), скорее зарегистрируйтесь.
-
-#### 2. Создайте форк
-
-[Откройте мастер-репозиторий]({{homepage}}) и нажмите кнопку «Fork» в правом верхнем углу. Репозиторий из Академии будет скопирован в ваш аккаунт.
-
-<img width="800" alt="" src="https://user-images.githubusercontent.com/10909/60807979-e1129f00-a18f-11e9-90d7-b44d2ff2c003.jpg">
-
-Получится вот так:
-
-<img width="800" alt="" src="https://user-images.githubusercontent.com/10909/60807980-e1129f00-a18f-11e9-8137-45876f130340.jpg">
-
-#### 3. Клонируйте репозиторий на свой компьютер
-
-Будьте внимательны: нужно клонировать свой репозиторий (форк), а не репозиторий Академии. Также обратите внимание, что клонировать репозиторий нужно через SSH, а не через HTTPS. Нажмите зелёную кнопку в правой части экрана, чтобы скопировать SSH-адрес вашего репозитория:
-
-<img width="800" alt="" src="https://user-images.githubusercontent.com/10909/60807982-e1129f00-a18f-11e9-98c4-0d3bf4b85cf1.jpg">
-
-Клонировать репозиторий можно так:
-
-```
-git clone SSH-адрес_вашего_форка
+```scss
+@font-face {
+  font-family: Inter;
+  font-display: swap;
+  src: url('../fonts/Inter-Bold.woff2') format('woff2'), url('../fonts/Inter-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
 ```
 
-Команда клонирует репозиторий на ваш компьютер и подготовит всё необходимое для старта работы.
+### ВНИМАНИЕ!!!
 
-#### 4. Начинайте обучение!
+> Если в папке `src/scss/config` - уже есть файл `fonts.scss` - тогда при добавлении новых шрифтов **НУЖНО УДАЛИТЬ** старый файл `fonts.scss`. Не переживай, при повторном запуске сборки - Gulp все новые шрифты сконвертирует и создаст новый файл `fonts.scss`.
 
----
+Дальше, что еще умеет сборка:
 
-<a href="https://htmlacademy.ru/intensive/adaptive"><img align="left" width="50" height="50" alt="HTML Academy" src="https://up.htmlacademy.ru/static/img/intensive/adaptive/logo-for-github-2.png"></a>
+- сжимает изображения и конвертирует их дополнительно в формат `.webp` и подключает их если браузер поддерживает этот формат;
+- копирует папку `/static` с содержимым в финальную сборку. То есть любые файлы можно поместить в эту папку и она будет добавлена в финальную сборку;
+- отдельной командой `$ npm run svgSprive` cоздает "svg cпрайты";
+- перед каждым запуском сборщика чистит папку с финальным проектом, чтобы не собирать мусор;
+- отдельной командой `$ npm run zip` можно заархивировать финальную папку для заказчика **с именем проекта**;
+- так же для разработки `gulp` запускает сервер с автоматической перезагрузкой окна в браузере при изменении файлов в проекте;
+- отдельной командой `$ npm run deployFTP` финальный проект выгружается на хостинг. Опции для отправки проекта на нужный хостинг указываются в файле: `gulp/config/ftp.js`.
 
-Репозиторий создан для обучения на профессиональном онлайн‑курсе «[HTML и CSS. Адаптивная вёрстка и автоматизация](https://htmlacademy.ru/intensive/adaptive)» от [HTML Academy](https://htmlacademy.ru).
+## Что делает WebPack?
 
-[check-image]: https://github.com/htmlacademy-adaptive/{{userId}}-{{projectName}}/workflows/Project%20check/badge.svg?branch=master
-[check-url]: https://github.com/htmlacademy-adaptive/{{userId}}-{{projectName}}/actions
+- именно `webpack` в данной сборке занимается обработкой файлов c JavaScript;
+- поддерживается модульное подключение скриптов `import/export`;
+- при импорте нет необходимости писать расширение файла `.js`, так же если осуществляется импорт из файла `index.js` необязательно это указывать:
+
+```javascript
+import * as flsFunctions from './modules' // './modules/index.js'
+```
+
+- `webpack` c помощью `babel` позволяет тебе писать код на любимом **ES6+**;
+- в режиме `"production"` при финальной сборке файлы JS сжимаются, а лишние комментарии удаляются.
+
+## Финал
+
+Отдельной вишенкой является плагин `gh-pages` для деплоя папки `/dist` на отдельную ветку GitHub, чтобы красиво развернуть свой проект на GitHub Pages. Для этого в `package.json` укажи в поле **homepage** ссылку на свою страницу gh-pages:
+
+```json
+"homepage": "https://{UserName}.github.io/{NameRepo}",
+```
+
+По любым вопросам касающихся сборки пишите мне в [Telegram](https://t.me/StarkElessar).
