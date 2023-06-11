@@ -1,11 +1,72 @@
 <header class="header">
-  <div class="header__container">
-    <a href="#" class="header__logo logo"></a>
-    <nav class="header__menu menu">
-      <ul class="menu__list">
-        <li class="menu__item"><a href="#" class="menu__link">Link</a></li>
+  <div class="container header-container">
+    <a class="header__logo-link" href="#">
+      <img class="header__logo" src="../images/header-icons/insula-logo.svg" alt=".Our Logo"/>
+    </a>
+    <div class="main-social">
+      <ul class="main-social-list">
+        <li class="main-social-list__item">
+          <a class="main-social-list__link" href="mailto:Info@ins-media.ru">Info@ins-media.ru</a>
+          <img class="main-social-list__icon" src="../images/header-icons/mail-logo.svg" alt=".Email"/>
+        </li>
+        <li class="main-social-list__item">
+          <a class="main-social-list__link" href="#">@power.island</a>
+          <img class="main-social-list__icon" src="../images/header-icons/facebook-logo.svg" alt=".Facebook"/>
+        </li>
+        <li class="main-social-list__item">
+          <a class="main-social-list__link" href="tel:8 922 209 56 11">8 922 209 56 11</a>
+          <img class="main-social-list__icon" src="../images/header-icons/phone-logo.svg" alt=".Phone-number"/>
+        </li>
       </ul>
-    </nav>
+    </div>
     <!-- @@include('./iconMenu.html', {}) -->
   </div>
 </header>
+<main>
+  <section class="hero">
+    <div class="container hero-container">
+      <div class="hero-content">
+        <h1 class="hero__title">Ведёте бизнес в области энергетики?
+          Мы поможем сэкономить время, 
+          деньги и ресурсы!
+        </h1>
+        <p class="hero__subtitle">«Силовой остров» — еженедельный инфориационный обзор по отраслям теплоэнергетики<br/> 
+          и энергомашиностроения.
+        </p>
+        <div class="hero-buttons">
+          <button class="hero__button red-button" type="button">Читать бесплатно</button>
+          <button class="hero__button white-button" type="button">Подробнее</button>
+        </div>
+      </div>
+      <img class="hero__image" src="../images/hero-image/power__island.png" alt=".power island"/>
+    </div>
+  </section>
+  <section class="about-power-island">
+    <div class="container">    
+      <h2 class="about-power-island__title">«Силовой остров» это</h2>
+      <ul class="power-island-list">
+        <li class="power-island-list__item">
+          <b class="power-island-list__heading">Новости и аналитика</b>
+          <p class="power-island-list__descriprion">Генерация, производители оборудования,<br> энергоинжиниринг, генподряд, сервис,<br> государственное регулирование.</p>
+          <img class="power-island-list__image" src="../images/island-list-icons/card1__icon.png" alt=".Новости и аналитика">
+        </li>
+        <li class="power-island-list__item">
+          <b class="power-island-list__heading">Профессиональная аудитория</b>
+          <p class="power-island-list__descriprion">Подписчики обзора – более 500 <br> специалистов и руководителей высшего<br> звена – получают обзор напрямую в свои<br> почтовые ящики.</p>
+          <img class="power-island-list__image" src="../images/island-list-icons/card2__icon.png" alt=".Профессиональная аудитория">
+        </li>
+        <li class="power-island-list__item">
+          <b class="power-island-list__heading">Предмет мониторинга</b>
+          <p class="power-island-list__descriprion">Инвестпрограммы, ремонтные кампании,<br> модернизации. Портфели заказов, текущие<br> проекты, стратегии развития. НИОКР.<br> Стратегическое планирование в отрасли.<br> Кадровые назначения.</p>
+          <img class="power-island-list__image" src="../images/island-list-icons/card3__icon.png" alt=".Предмет мониторинга">
+        </li>
+        <li class="power-island-list__item">
+          <b class="power-island-list__heading">Достоверные источники</b>
+          <p class="power-island-list__descriprion">Только проверенная информация<br> 
+            из первоисточников, снабженная<br> гиперссылками: материалы компаний,<br>госорганов, деловых и корпоративных СМИ.</p>
+            <img class="power-island-list__image" src="../images/island-list-icons/card4__icon.png" alt=".Достоверные источники">
+        </li>
+      </ul>
+  </div>
+  </section>
+</main> 
