@@ -1,0 +1,113 @@
+.about-us {
+    width: 100%;
+    max-width: 720px;
+    padding: 0;
+    margin: 0;
+    color: #ffffff;
+    border-bottom: 8px solid #EE1B24;                
+}
+
+.text-content-about {
+    padding: 80px 0 0 48px;    
+}
+
+.pare-section {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1440px;
+    display: flex;    
+    background: #F0F0F0;
+}
+
+.about-us-info {
+    width: 100%;
+    max-width: 720px;
+    min-height: 582px;
+    text-align: start;
+    background-color: #161A2B;
+}
+
+.about-us-declaration {    
+    width: 100%;
+    max-width: 720px;
+    min-height: 582px;
+    color: #ffffff;
+    text-align: start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../../images/about-us-img/about-us__declaration_bg.png');
+    background-size: cover; 
+}
+
+.about-us-plates-container {     
+    width: 100%;
+    max-width: 432px;
+    min-height: 432px;    
+}
+
+.about-us-declaration-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr; 
+    gap: 16px;
+       
+}
+
+.about-us-declaration-list__item {
+    width: 100%;
+    max-width: 208px;
+    min-height: 208px;    
+    background-color: #161A2B;
+    padding: 64px 19px 0 34px;
+    position: relative;       
+}
+
+.about-us-declaration-list__heading {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.5;
+}
+
+.about-us-declaration-list__text {    
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.about-us-declaration-list__image {
+    position: absolute;
+    top: 0;
+    left: 24px;
+}
+
+
+
+.about-us-info-title {    
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 1.5;
+}
+
+.about-us-info-subtitle {
+    padding: 47px 0 0;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.about-us-info-desc-text {
+    padding: 32px 0 0;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.about-us-info-description {
+    padding: 24px 0 0;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.about-us-info-description__item {
+    width: 100%;
+    max-width: 432px;
+}
