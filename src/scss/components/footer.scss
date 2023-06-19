@@ -1,12 +1,43 @@
-.footer {  
+.footer {
+  width: 100%;
+  min-height: 185px;  
   background-color: #161A2B;
 }
 
 .footer-container {  
   display: flex;
-  
+  flex-direction: column;  
 }
 
 .footer__logo-link {
   padding: 40px 0 0;
+}
+
+.footer-contacts-list {
+  color: #FFFFFF;
+  padding: 32px 0 0;
+  display: flex;
+  gap: 221px;
+}
+
+.footer-contacts-list__item {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.footer-contacts-list-text {
+  display: flex;
+  gap: 16px;
+}
+
+.footer-contacts-list__link {
+  color: #FFFFFF;
+  transition: color 0.2s ease, opacity 0.2s ease;
+  &:hover {
+    color: #9900ff;
+  }
+  &:active {
+    opacity: 0.6;
+  }
 }
